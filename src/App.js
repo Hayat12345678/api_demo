@@ -1,6 +1,5 @@
-
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 function App() {
@@ -14,15 +13,18 @@ function App() {
       alert(err.message);
     }
   };
+  useEffect(()=>{
+    loadData();
+  },[]);
   return (
     <div className="App">
-      <button
+      {/* <button
         onClick={() => {
           loadData();
         }}
       >
         Lade User
-      </button>
+      </button> */}
       <ul>
         {users.map((user, index) => {
           return (
